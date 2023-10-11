@@ -1,9 +1,7 @@
-package com.project.gamecatalogue;
+package com.project.gamecatalogue.games;
 
 public enum Genre {
     RPG,
-    ACTION,
-    SHOOTER,
     PLATFORMER,
     ROGUELIKE
 }

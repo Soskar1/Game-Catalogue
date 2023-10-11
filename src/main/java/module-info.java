@@ -5,4 +5,6 @@ module com.project.gamecatalogue {
 
     opens com.project.gamecatalogue to javafx.fxml;
     exports com.project.gamecatalogue;
+    exports com.project.gamecatalogue.games;
+    opens com.project.gamecatalogue.games to javafx.fxml;
 }
