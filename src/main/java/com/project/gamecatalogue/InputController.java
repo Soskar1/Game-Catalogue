@@ -1,5 +1,6 @@
 package com.project.gamecatalogue;
 
+import com.project.gamecatalogue.games.Game;
 import com.project.gamecatalogue.games.Genre;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
