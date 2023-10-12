@@ -6,15 +6,15 @@ import java.util.ArrayList;
 public class RpgGame extends Game {
     private final int METACRITIC_RATING;
 
-    public RpgGame(String name, Genre genre, String pathToImage, int metacriticRrating) throws FileNotFoundException {
+    public RpgGame(String name, Genre genre, String pathToImage, int metacriticRating) throws FileNotFoundException {
         super(name, genre, pathToImage);
-        METACRITIC_RATING = metacriticRrating;
+        METACRITIC_RATING = metacriticRating;
     }
 
     @Override
-    public void print() {
-        super.print();
-
-        //TODO: print function
+    public ArrayList<String> getInfo() {
+        ArrayList<String> info = super.getInfo();
+        info.add("Metascore: " + Integer.toString(METACRITIC_RATING) + "/100");
+        return info;
     }
 }

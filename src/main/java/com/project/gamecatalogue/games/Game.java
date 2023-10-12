@@ -4,6 +4,7 @@ import javafx.scene.image.Image;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 public class Game {
     private final String NAME;
@@ -16,8 +17,12 @@ public class Game {
         IMAGE = new Image(new FileInputStream(pathToImage));
     }
 
-    public void print() {
+    public ArrayList<String> getInfo() {
+        ArrayList<String> info = new ArrayList<>();
+        info.add(NAME);
+        info.add(GENRE.name());
 
+        return info;
     }
 
     public Image getImage() {

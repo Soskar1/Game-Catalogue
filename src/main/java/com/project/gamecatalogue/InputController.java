@@ -16,20 +16,17 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class InputController implements Initializable {
-    @FXML private ChoiceBox<Genre> genre;
+public class InputController {
     @FXML private Button searchButton;
     @FXML private TextField gameName;
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        genre.getItems().addAll(Genre.values());
-    }
 
     @FXML
     protected void openSearchWindow() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(GameCatalogue.class.getResource("output.fxml"));
         Parent root = fxmlLoader.load();
+
+        OutputController outputController = fxmlLoader.getController();
+        outputController.initialize(gameName.getText());
 
         Stage stage = new Stage();
         Scene scene = new Scene(root);

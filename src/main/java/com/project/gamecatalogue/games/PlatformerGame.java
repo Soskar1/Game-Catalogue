@@ -13,9 +13,10 @@ public class PlatformerGame extends Game {
     }
 
     @Override
-    public void print() {
-        super.print();
-
-        //TODO: print additional data
+    public ArrayList<String> getInfo() {
+        ArrayList<String> info = super.getInfo();
+        info.add("Player feedback:\n");
+        info.addAll(PLAYER_FEEDBACK);
+        return info;
     }
 }

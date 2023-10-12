@@ -1,6 +1,7 @@
 package com.project.gamecatalogue.games;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 public class RoguelikeGame extends Game {
     private final int DIFFICULTY_RATING;
@@ -12,9 +13,9 @@ public class RoguelikeGame extends Game {
     }
 
     @Override
-    public void print() {
-        super.print();
-
-        //TODO print additional data
+    public ArrayList<String> getInfo() {
+        ArrayList<String> info = super.getInfo();
+        info.add("Difficulty: " + Integer.toString(DIFFICULTY_RATING) + "/10");
+        return info;
     }
 }

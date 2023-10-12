@@ -4,17 +4,15 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="248.0" prefWidth="408.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.gamecatalogue.InputController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="181.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.gamecatalogue.InputController">
    <children>
-      <Label layoutX="138.0" layoutY="14.0" text="Game Catalogue" textAlignment="CENTER">
+      <Label layoutX="95.0" layoutY="20.0" text="Game Catalogue" textAlignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="searchButton" layoutX="178.0" layoutY="208.0" mnemonicParsing="false" onAction="#openSearchWindow" text="Search" />
-      <TextField fx:id="gameName" layoutX="108.0" layoutY="87.0" prefHeight="26.0" prefWidth="191.0" />
-      <Label layoutX="172.0" layoutY="62.0" text="Game name" textAlignment="CENTER" />
-      <ChoiceBox fx:id="genre" layoutX="129.0" layoutY="149.0" prefWidth="150.0" />
-      <Label layoutX="188.0" layoutY="124.0" text="Genre" textAlignment="CENTER" />
+      <Button fx:id="searchButton" layoutX="136.0" layoutY="137.0" mnemonicParsing="false" onAction="#openSearchWindow" text="Search" />
+      <TextField fx:id="gameName" layoutX="65.0" layoutY="93.0" prefHeight="26.0" prefWidth="191.0" />
+      <Label layoutX="129.0" layoutY="68.0" text="Game name" textAlignment="CENTER" />
    </children>
 </AnchorPane>
