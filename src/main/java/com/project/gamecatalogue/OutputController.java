@@ -23,6 +23,8 @@ public class OutputController {
     @FXML private Label genre;
     @FXML private TextArea additionalInformation;
 
+    public OutputController() throws FileNotFoundException { }
+
     //1. UserData
     public void initialize(Stage stage) {
         String userInput = (String) stage.getUserData();

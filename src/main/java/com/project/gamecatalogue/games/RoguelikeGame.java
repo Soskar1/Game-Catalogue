@@ -4,18 +4,26 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class RoguelikeGame extends Game {
-    private final int DIFFICULTY_RATING;
+    private int difficultyRating;
+
+    public RoguelikeGame(String name, Genre genre, String pathToImage) throws FileNotFoundException {
+        super(name, genre, pathToImage);
+    }
 
     public RoguelikeGame(String name, Genre genre, String pathToImage, int difficultyRating) throws FileNotFoundException {
         super(name, genre, pathToImage);
 
-        DIFFICULTY_RATING = difficultyRating;
+        this.difficultyRating = difficultyRating;
+    }
+
+    public void setDifficultyRating(int difficultyRating) {
+        this.difficultyRating = difficultyRating;
     }
 
     @Override
     public ArrayList<String> getInfo() {
         ArrayList<String> info = super.getInfo();
-        info.add("Difficulty: " + Integer.toString(DIFFICULTY_RATING) + "/10");
+        info.add("Difficulty: " + difficultyRating + "/10");
         return info;
     }
 }

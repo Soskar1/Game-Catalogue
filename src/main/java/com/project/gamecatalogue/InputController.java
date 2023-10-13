@@ -27,14 +27,12 @@ public class InputController {
         //outputController.initialize(stage);
 
         //2. Controller -> Controller
-        //outputController.initialize(gameName.getText());
+        outputController.initialize(gameName.getText());
 
         //3. Singleton
         //Singleton singleton = Singleton.getInstance();
         //singleton.setUserInput(gameName.getText());
         //outputController.initialize();
-
-        
 
         Scene scene = new Scene(root);
 
