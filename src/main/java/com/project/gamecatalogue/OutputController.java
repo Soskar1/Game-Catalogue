@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -22,9 +23,27 @@ public class OutputController {
     @FXML private Label genre;
     @FXML private TextArea additionalInformation;
 
-    public void initialize(String userInput) throws FileNotFoundException {
+    //1. UserData
+    public void initialize(Stage stage) {
+        String userInput = (String) stage.getUserData();
         Game game = gameDataBase.search(userInput);
 
+        try {
+            display(game);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    //2. Controller -> Controller
+    public void initialize(String userInput) throws FileNotFoundException {
+        Game game = gameDataBase.search(userInput);
+        display(game);
+    }
+
+    //3. Singleton
+
+    private void display(Game game) throws FileNotFoundException {
         if (game == null) {
             imageView.setImage(new Image(new FileInputStream("src/main/resources/com/project/gamecatalogue/SadFace.png")));
             gameName.setText("Game not found");

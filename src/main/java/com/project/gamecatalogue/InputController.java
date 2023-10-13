@@ -1,20 +1,14 @@
 package com.project.gamecatalogue;
 
-import com.project.gamecatalogue.games.Game;
-import com.project.gamecatalogue.games.Genre;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class InputController {
     @FXML private Button searchButton;
@@ -25,10 +19,17 @@ public class InputController {
         FXMLLoader fxmlLoader = new FXMLLoader(GameCatalogue.class.getResource("output.fxml"));
         Parent root = fxmlLoader.load();
 
+
         OutputController outputController = fxmlLoader.getController();
-        outputController.initialize(gameName.getText());
+
+        //2. Controller -> Controller
+        //outputController.initialize(gameName.getText());
 
         Stage stage = new Stage();
+        //1. UserData
+        stage.setUserData(gameName.getText());
+        outputController.initialize(stage);
+
         Scene scene = new Scene(root);
 
         stage.setTitle("Game Catalogue");
