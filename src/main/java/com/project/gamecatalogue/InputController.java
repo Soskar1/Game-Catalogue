@@ -19,16 +19,22 @@ public class InputController {
         FXMLLoader fxmlLoader = new FXMLLoader(GameCatalogue.class.getResource("output.fxml"));
         Parent root = fxmlLoader.load();
 
-
+        Stage stage = new Stage();
         OutputController outputController = fxmlLoader.getController();
+
+        //1. UserData
+        //stage.setUserData(gameName.getText());
+        //outputController.initialize(stage);
 
         //2. Controller -> Controller
         //outputController.initialize(gameName.getText());
 
-        Stage stage = new Stage();
-        //1. UserData
-        stage.setUserData(gameName.getText());
-        outputController.initialize(stage);
+        //3. Singleton
+        //Singleton singleton = Singleton.getInstance();
+        //singleton.setUserInput(gameName.getText());
+        //outputController.initialize();
+
+        
 
         Scene scene = new Scene(root);
 

@@ -42,6 +42,12 @@ public class OutputController {
     }
 
     //3. Singleton
+    public void initialize() throws FileNotFoundException {
+        Singleton singleton = Singleton.getInstance();
+        String userInput = singleton.getUserInput();
+        Game game = gameDataBase.search(userInput);
+        display(game);
+    }
 
     private void display(Game game) throws FileNotFoundException {
         if (game == null) {
