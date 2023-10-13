@@ -8,6 +8,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -20,11 +22,13 @@ public class OutputController {
     @FXML private Label genre;
     @FXML private TextArea additionalInformation;
 
-    public void initialize(String userInput) {
+    public void initialize(String userInput) throws FileNotFoundException {
         Game game = gameDataBase.search(userInput);
 
         if (game == null) {
-            System.out.println("TODO: make an error window");
+            imageView.setImage(new Image(new FileInputStream("src/main/resources/com/project/gamecatalogue/SadFace.png")));
+            gameName.setText("Game not found");
+            genre.setText("Genre: undefined");
             return;
         }
 
